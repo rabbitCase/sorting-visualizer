@@ -110,6 +110,11 @@ let target = "";
 
 document.getElementById("input-container").addEventListener("click", async function(event) {
     if(event.target.classList.contains("sim-button")) {
+        if(arraySize.value < 1 || arraySize.value > 70){
+            alert("input range = [1,70]");
+            return;
+        }
+
         simulation.arrayContainer.innerHTML = "";
         document.getElementById('start-button').disabled = true;
         arr= [];
